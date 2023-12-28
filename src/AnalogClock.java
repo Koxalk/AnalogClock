@@ -23,7 +23,6 @@ public class AnalogClock extends JPanel {
         g2.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
 
         // Define colors based on dark or light mode
-        Color primaryColor = isDarkMode ? new Color(36, 37, 38) : new Color(246, 247, 251);
         Color clockColor = isDarkMode ? new Color(18, 19, 26) : Color.WHITE;
         Color textColor = isDarkMode ? Color.WHITE : Color.BLACK;
         Color indicatorColor = new Color(231, 76, 60);
@@ -95,9 +94,7 @@ public class AnalogClock extends JPanel {
         frame.setVisible(true);
 
         // Ενημέρωση του ρολογιού κάθε δευτερόλεπτο
-        Timer timer = new Timer(1000, e -> {
-            clock.repaint();
-        });
+        Timer timer = new Timer(1000, e -> clock.repaint());
         timer.start();
     }
 
